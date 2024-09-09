@@ -1,4 +1,5 @@
 from ting_file_management.file_management import txt_importer
+import sys
 
 
 def process(path_file, instance):
@@ -30,6 +31,7 @@ def remove(instance):
 
 def file_metadata(instance, position):
     if position < 0 or position >= len(instance):
-        raise IndexError("Índice Inválido ou Inexistente")
-
-    return instance.items[position]
+        print("Posição inválida", file=sys.stderr)
+        return
+    file_data = instance.items[position]
+    print(file_data)
