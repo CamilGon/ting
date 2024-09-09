@@ -22,6 +22,12 @@ def remove(instance):
     if not instance.is_empty():
         instance.dequeue()
 
+    if instance.is_empty():
+        print("Não há elementos")
+        return
+    file_data = instance.dequeue()
+    print(f"Arquivo {file_data['nome_do_arquivo']} removido com sucesso")
+
 
 def file_metadata(instance, position):
     if position < 0 or position >= len(instance):
